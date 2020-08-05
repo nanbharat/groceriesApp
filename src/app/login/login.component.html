@@ -1,0 +1,32 @@
+<!-- login -->
+<div class="w3_login">
+  <h3>Sign In & Sign Up</h3>
+  <div class="w3_login_module">
+      <div class="module form-module">
+        <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+          <div class="tooltip" (click)="ChangeForm()">Click Me</div>
+        </div>
+        <div class="form" *ngIf="IsLogin">
+          <h2>Login to your account</h2>
+          <form  #loginuser="ngForm" >
+            <input type="text" name="Username" (ngModel)="username" placeholder="Username" required=" ">
+            <input type="password" name="Password" (ngModel)="password" placeholder="Password" required=" ">
+            <input type="btn btn-default" value="Login"  (click) = "Login(loginuser)" >
+          </form>
+        </div>
+        <div class="form" *ngIf="!IsLogin">
+          <h2>Create an account</h2>
+          <form #RegisterUser="ngForm"  >
+            <input type="text" name="Username" placeholder="Username" required=" ">
+            <input type="password" name="Password" placeholder="Password" required=" ">
+            <input type="email" name="Email" placeholder="Email Address" required=" ">
+            <input type="text" name="Phone" placeholder="Phone Number" required=" ">
+            <input type="button" value="Register" (click)="Register(RegisterUser)">
+          </form>
+        </div>
+        <div class="cta"><a href="#">Forgot your password?</a></div>
+      </div>
+  </div>
+ 
+</div>
+<!-- //login -->
